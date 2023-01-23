@@ -9,7 +9,7 @@ describe('Deposit', () => {
         Date.mockImplementation(() => {
             return {
                 getDate: () => {
-                    return '01.01.2023'
+                    return '01/01/2023'
                 }
             }
         })
@@ -17,11 +17,11 @@ describe('Deposit', () => {
 
     it('returns a deposit amount with a date', () => {
 
-        const date = new Date('01.01.2023')
+        const date = new Date('01/01/2024')
 
         const deposit = new Deposit(1000, date)
 
-        expect(deposit.getDeposit()).toEqual({amount: 1000, date:'01.01.2023'})
+        expect(deposit.getDeposit()).toEqual({amount: 1000, date:'01/01/2023'})
     })
 
     it('errors if no date has been provided', () => {
@@ -32,7 +32,7 @@ describe('Deposit', () => {
 
     it('errors if no amount has been provided', () => {
 
-        const date = new Date('01.01.2023')
+        const date = new Date('01/01/2023')
 
         const deposit = new Deposit(0, date)
 

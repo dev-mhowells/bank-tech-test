@@ -11,7 +11,7 @@ describe('statement', () => {
         const deposit = new Deposit(1000, date)
 
         const account = new Account()
-        account.addDeposit(deposit.getDeposit())
+        account.addDeposit(deposit)
 
         // const statement = new Statement(account)
         
