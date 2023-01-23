@@ -1,6 +1,6 @@
 const Date = require('../date.js')
 const Deposit = require('../deposit.js')
-// const Account = require('../account.js')
+const Account = require('../account.js')
 // const Statement = require('../statement.js')
 
 describe('statement', () => {
@@ -10,8 +10,8 @@ describe('statement', () => {
 
         const deposit = new Deposit(1000, date)
 
-        // const account = new Account()
-        // account.addDeposit(deposit.getDeposit())
+        const account = new Account()
+        account.addDeposit(deposit.getDeposit())
 
         // const statement = new Statement(account)
         

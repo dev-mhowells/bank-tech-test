@@ -4,8 +4,8 @@ describe('Date', () => {
 
     it('returns the date', () => {
 
-        const date = new Date('01.01.2023')
-        expect(date.getDate()).toBe('01.01.2023')
+        const date = new Date('01/01/2023')
+        expect(date.getDate()).toBe('01/01/2023')
 
     })
 
@@ -18,7 +18,7 @@ describe('Date', () => {
 
     it('errors if string is not correct format', () => {
 
-        const date = new Date('01/01/2023')
+        const date = new Date('01.01.2023')
 
         expect(() => {date.getDate()}).toThrow('date must be formatted correctly')
 
