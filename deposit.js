@@ -4,6 +4,9 @@ class Deposit {
         this.date = date
     }
     getDeposit() {
+
+        if (!this.date) throw new Error('date must be provided')
+
         return {amount: this.amount, date: this.date.getDate()}
     }
 }
