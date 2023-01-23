@@ -15,11 +15,10 @@ class Date {
                 && splitDate[1].length === 2
                 && splitDate[2].length === 4) {
                     return this.date
+                    
                 } else throw new Error('date must be formatted correctly')
 
-        } else {
-            throw new Error('date must be a string')
-        }
+        } else throw new Error('date must be a string')
     }
 }
 
