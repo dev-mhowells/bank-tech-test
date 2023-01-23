@@ -3,8 +3,15 @@ class Date {
         this.date = date
     }
     getDate() {
-        return this.date
+        if (typeof this.date === 'string') {
+            return this.date
+        } else {
+            throw new Error('date must be formatted correctly')
+        }
     }
 }
 
 module.exports = Date
+
+// const date = new Date('abd')
+// date.getDate()
