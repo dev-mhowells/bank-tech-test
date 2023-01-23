@@ -29,4 +29,13 @@ describe('Deposit', () => {
 
         expect(() => {deposit.getDeposit()}).toThrow('date must be provided')
     })
+
+    it('errors if no amount has been provided', () => {
+
+        const date = new Date('01.01.2023')
+
+        const deposit = new Deposit(0, date)
+
+        expect(() => {deposit.getDeposit()}).toThrow('amount must be provided')
+    })
 })
