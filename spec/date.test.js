@@ -11,12 +11,20 @@ describe('Date', () => {
 
     it('errors if date is not a string', () => {
 
-        const date = new Date(1012023)
-        try {
-            date.getDate()
-        } catch (error) {
-            expect(error.message).toBe('date must be formatted correctly')
-        }
+        const date = new Date(123)
+ 
+        expect(() => {date.getDate()}).toThrow('date must be formatted correctly')
     })
+
+    // it('errors if string is not correct format', () => {
+
+    //     const date = new Date('01/01/2023')
+
+    //     try {
+    //         date.getDate()
+    //     } catch (error) {
+    //         expect(error.message).toBe('date mustk be formatted correctly')
+    //     }
+    // })
 
 })
