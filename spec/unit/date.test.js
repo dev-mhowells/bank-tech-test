@@ -1,4 +1,4 @@
-const Date = require('../date')
+const Date = require('../../date')
 
 describe('Date', () => {
 

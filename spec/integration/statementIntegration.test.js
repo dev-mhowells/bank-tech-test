@@ -1,6 +1,6 @@
-const Date = require('../date.js')
-const Deposit = require('../deposit.js')
-const Account = require('../account.js')
+const Date = require('../../date.js')
+const Deposit = require('../../deposit.js')
+const Account = require('../../account.js')
 // const Statement = require('../statement.js')
 
 describe('statement', () => {

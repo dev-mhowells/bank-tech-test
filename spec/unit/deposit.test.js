@@ -1,7 +1,7 @@
-const Deposit = require('../deposit')
-const Date = require('../date')
+const Deposit = require('../../deposit')
+const Date = require('../../date')
 
-jest.mock('../date')
+jest.mock('../../date')
 
 describe('Deposit', () => {
 
