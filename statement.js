@@ -11,7 +11,7 @@ class Statement {
             return `\n${transaction.date} || ${transaction.type === "credit" ? transaction.amount.toFixed(2) + ' ' : ''}|| ${transaction.type === "debit" ? transaction.amount.toFixed(2) + '' : ''}|| ${transaction.balance.toFixed(2)}`
         })
 
-        return `${headers}${formattedRecord}`
+        return `${headers}${formattedRecord.join('')}`
     }
 }
 

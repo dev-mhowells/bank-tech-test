@@ -16,6 +16,12 @@ describe('Statement', () => {
                             type: "credit",
                             balance: 1000
                         },
+                        {
+                            date: '05/01/2023',
+                            amount: 3000,
+                            type: "credit",
+                            balance: 4000
+                        },
                         ]
                 }
             }
@@ -27,6 +33,6 @@ describe('Statement', () => {
 
         const statement = new Statement(account)
 
-        expect(statement.print()).toEqual('date || credit || debit || balance\n01/01/2023 || 1000.00 || || 1000.00')
+        expect(statement.print()).toEqual('date || credit || debit || balance\n01/01/2023 || 1000.00 || || 1000.00\n05/01/2023 || 3000.00 || || 4000.00')
     })
 })
