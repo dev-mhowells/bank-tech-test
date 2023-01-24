@@ -8,10 +8,9 @@ class Statement {
         const headers = "date || credit || debit || balance"
 
         const formattedRecord = record.map((transaction) => {
-            return `\n${transaction.date} || ${transaction.type === "credit" ? transaction.amount + ' ' : ''}|| ${transaction.type === "debit" ? transaction.amount + '' : ''}|| ${transaction.balance}`
+            return `\n${transaction.date} || ${transaction.type === "credit" ? transaction.amount.toFixed(2) + ' ' : ''}|| ${transaction.type === "debit" ? transaction.amount.toFixed(2) + '' : ''}|| ${transaction.balance.toFixed(2)}`
         })
 
-        console.log(`${headers}${formattedRecord}`)
         return `${headers}${formattedRecord}`
     }
 }

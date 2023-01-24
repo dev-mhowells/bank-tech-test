@@ -27,6 +27,6 @@ describe('Statement', () => {
 
         const statement = new Statement(account)
 
-        expect(statement.print()).toEqual('date || credit || debit || balance\n01/01/2023 || 1000 || || 1000')
+        expect(statement.print()).toEqual('date || credit || debit || balance\n01/01/2023 || 1000.00 || || 1000.00')
     })
 })

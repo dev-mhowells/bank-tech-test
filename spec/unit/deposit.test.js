@@ -19,13 +19,13 @@ describe('Deposit', () => {
 
         const date = new Date('01/01/2024')
 
-        const deposit = new Deposit(1000, date)
+        const deposit = new Deposit(1000.00, date)
 
-        expect(deposit.getDeposit()).toEqual({amount: 1000, date:'01/01/2023'})
+        expect(deposit.getDeposit()).toEqual({amount: 1000.00, date:'01/01/2023'})
     })
 
     it('errors if no date has been provided', () => {
-        
+
         const deposit = new Deposit(1000)
 
         expect(() => {deposit.getDeposit()}).toThrow('date must be provided')

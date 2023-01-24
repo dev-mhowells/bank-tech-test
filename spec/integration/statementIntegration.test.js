@@ -8,14 +8,14 @@ describe('statement', () => {
 
         const date = new Date('10/01/2023')
 
-        const deposit = new Deposit(1000, date)
+        const deposit = new Deposit(1000.00, date)
 
         const account = new Account()
         account.addDeposit(deposit)
 
         const statement = new Statement(account)
         
-        // expect(statement.print()).toBe(
-        //     'date || credit || debit || balance \n 10/01/2023 || 1000.00 || || 1000.00')
+        expect(statement.print()).toBe(
+            'date || credit || debit || balance\n10/01/2023 || 1000.00 || || 1000.00')
     })
 })

@@ -9,7 +9,7 @@ describe('Account', () => {
         Deposit.mockImplementation(() => {
             return {
                 getDeposit: () => {
-                    return {amount: 1000, date: '01/01/2023'}
+                    return {amount: 1000.00, date: '01/01/2023'}
                 }
             }
         })
@@ -27,13 +27,13 @@ describe('Account', () => {
         expect(account.getRecord()).toEqual([
             {
                 date: '01/01/2023',
-                amount: 1000,
+                amount: 1000.00,
                 type: "credit",
                 balance: 1000
             },
             {
                 date: '01/01/2023',
-                amount: 1000,
+                amount: 1000.00,
                 type: "credit",
                 balance: 2000
             }])
