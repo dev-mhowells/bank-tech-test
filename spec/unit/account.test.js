@@ -1,15 +1,15 @@
 const Account = require('../../account')
-const Deposit = require('../../deposit')
+const Transaction = require('../../transaction')
 
-jest.mock('../../deposit')
+jest.mock('../../transaction')
 
 describe('Account', () => {
 
     beforeAll(() => {
-        Deposit.mockImplementation(() => {
+        Transaction.mockImplementation(() => {
             return {
-                getDeposit: () => {
-                    return {amount: 1000.00, date: '01/01/2023'}
+                getTransaction: () => {
+                    return {type: 'credit', amount: 1000.00, date: '01/01/2023'}
                 }
             }
         })
@@ -17,12 +17,12 @@ describe('Account', () => {
 
     it('updates the account record with a deposit', () => {
         
-        const deposit = new Deposit()
+        const transaction = new Transaction()
 
         const account = new Account()
 
-        account.addDeposit(deposit)
-        account.addDeposit(deposit)
+        account.addDeposit(transaction)
+        account.addDeposit(transaction)
 
         expect(account.getRecord()).toEqual([
             {

@@ -1,4 +1,4 @@
-const Deposit = require('../../deposit')
+const Transaction = require('../../transaction')
 const Date = require('../../date')
 
 jest.mock('../../date')
@@ -19,24 +19,24 @@ describe('Deposit', () => {
 
         const date = new Date('01/01/2024')
 
-        const deposit = new Deposit(1000.00, date)
+        const transaction = new Transaction('credit', 1000.00, date)
 
-        expect(deposit.getDeposit()).toEqual({amount: 1000.00, date:'01/01/2023'})
+        expect(transaction.getTransaction()).toEqual({type: 'credit', amount: 1000.00, date:'01/01/2023'})
     })
 
     it('errors if no date has been provided', () => {
 
-        const deposit = new Deposit(1000)
+        const transaction = new Transaction('credit', 1000)
 
-        expect(() => {deposit.getDeposit()}).toThrow('date must be provided')
+        expect(() => {transaction.getTransaction()}).toThrow('date must be provided')
     })
 
     it('errors if no amount has been provided', () => {
 
         const date = new Date('01/01/2023')
 
-        const deposit = new Deposit(0, date)
+        const transaction = new Transaction('credit', 0, date)
 
-        expect(() => {deposit.getDeposit()}).toThrow('amount must be provided')
+        expect(() => {transaction.getTransaction()}).toThrow('amount must be provided')
     })
 })

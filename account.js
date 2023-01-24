@@ -5,17 +5,17 @@ class Account {
         this.record = []
     }
 
-    addDeposit(deposit) {
+    addDeposit(transaction) {
 
-        const incomingDeposit = deposit.getDeposit()
+        const incomingTransaction = transaction.getTransaction()
 
-        this.balance += incomingDeposit.amount
+        this.balance += incomingTransaction.amount
 
         this.record = [...this.record, 
             {
-                date: incomingDeposit.date,
-                amount: incomingDeposit.amount,
-                type: "credit",
+                date: incomingTransaction.date,
+                amount: incomingTransaction.amount,
+                type: incomingTransaction.type,
                 balance: this.balance,
             }]
     }
@@ -23,7 +23,7 @@ class Account {
     getRecord() {
         return this.record
     }
-    
+
 }
 
 module.exports = Account
