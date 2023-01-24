@@ -27,13 +27,13 @@ describe('Account', () => {
                 date: '01/01/2023',
                 amount: 1000.00,
                 type: "credit",
-                balance: 1000
+                balance: 2000
             },
             {
                 date: '01/01/2023',
                 amount: 1000.00,
                 type: "credit",
-                balance: 2000
+                balance: 1000
             }])
 
     })
@@ -60,13 +60,13 @@ describe('Account', () => {
                 date: '01/01/2023',
                 amount: 500.00,
                 type: "debit",
-                balance: -500
+                balance: -1000
             },
             {
                 date: '01/01/2023',
                 amount: 500.00,
                 type: "debit",
-                balance: -1000
+                balance: -500
             }])
 
     })

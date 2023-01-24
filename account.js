@@ -15,13 +15,13 @@ class Account {
             this.balance -= amount
         }
 
-        this.record = [...this.record, 
-            {
-                date,
-                amount,
-                type,
-                balance: this.balance,
-            }]
+        this.record = [{
+                        date,
+                        amount,
+                        type,
+                        balance: this.balance,
+                        },
+                        ...this.record, ]
     }
 
     getRecord() {

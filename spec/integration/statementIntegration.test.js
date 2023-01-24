@@ -19,7 +19,7 @@ describe('statement', () => {
         const statement = new Statement(account)
         
         expect(statement.print()).toBe(
-            'date || credit || debit || balance\n10/01/2023 || 1000.00 || || 1000.00\n11/01/2023 || 4000.00 || || 5000.00')
+            'date || credit || debit || balance\n11/01/2023 || 4000.00 || || 5000.00\n10/01/2023 || 1000.00 || || 1000.00')
     })
 
     it('prints a statement after making a deposit and withdrawal', () => {
@@ -37,7 +37,7 @@ describe('statement', () => {
         const statement = new Statement(account)
 
         expect(statement.print()).toBe(
-            'date || credit || debit || balance\n10/01/2023 || 1000.00 || || 1000.00\n11/01/2023 || || 500.00 || 500.00')
+            'date || credit || debit || balance\n11/01/2023 || || 500.00 || 500.00\n10/01/2023 || 1000.00 || || 1000.00')
 
     })
 })
