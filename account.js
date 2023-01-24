@@ -9,10 +9,7 @@ class Account {
 
     addTransaction(transaction) {
 
-        const incomingTransaction = transaction.getTransaction()
-
-        const type = incomingTransaction.type
-        const amount = incomingTransaction.amount
+        const {amount, date, type} = transaction.getTransaction()
 
         if(type === 'credit') {
         this.balance += amount} 
@@ -22,7 +19,7 @@ class Account {
 
         this.record = [...this.record, 
             {
-                date: incomingTransaction.date,
+                date,
                 amount,
                 type,
                 balance: this.balance,
