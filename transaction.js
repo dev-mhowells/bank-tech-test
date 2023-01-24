@@ -6,8 +6,6 @@ class Transaction {
         this.date = date
     }
 
-    // generic errors
-
     getTransaction() {
 
         if (!this.date) throw new Error('transaction must be initialized with: type, amount, date')

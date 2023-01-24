@@ -28,6 +28,10 @@ To see test coverage run
 
 ## Demo
 
+Each transaction must be initialised with a transaction type, a date and an amount. Date is initialised as its own class for seperation of concerns and error handling.
+
+Once an account has been initialised, transactions can be added. The statement class then takes the account and prints a record of transactions.
+
 ```bash
         const date = new Date('10/01/2023')
         const deposit = new Transaction('credit', 1000.00, date)
