@@ -5,11 +5,17 @@ class Account {
         this.record = []
     }
 
-    addDeposit(transaction) {
+    // add transaction - find type and ammend total accordingly
+
+    addTransaction(transaction) {
 
         const incomingTransaction = transaction.getTransaction()
 
-        this.balance += incomingTransaction.amount
+        if(incomingTransaction.type === 'credit') {
+        this.balance += incomingTransaction.amount} 
+        else if (incomingTransaction.type === 'debit') {
+            this.balance -= incomingTransaction.amount
+        }
 
         this.record = [...this.record, 
             {

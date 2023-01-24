@@ -13,8 +13,8 @@ describe('statement', () => {
         const deposit2 = new Transaction ('credit', 4000, date2)
 
         const account = new Account()
-        account.addDeposit(deposit)
-        account.addDeposit(deposit2)
+        account.addTransaction(deposit)
+        account.addTransaction(deposit2)
 
         const statement = new Statement(account)
         

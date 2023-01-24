@@ -5,7 +5,18 @@ jest.mock('../../transaction')
 
 describe('Account', () => {
 
-    beforeAll(() => {
+    // beforeAll(() => {
+    //     Transaction.mockImplementation(() => {
+    //         return {
+    //             getTransaction: () => {
+    //                 return {type: 'credit', amount: 1000.00, date: '01/01/2023'}
+    //             }
+    //         }
+    //     })
+    // })
+
+    it('updates the account record with a deposit', () => {
+
         Transaction.mockImplementation(() => {
             return {
                 getTransaction: () => {
@@ -13,16 +24,13 @@ describe('Account', () => {
                 }
             }
         })
-    })
-
-    it('updates the account record with a deposit', () => {
         
         const transaction = new Transaction()
 
         const account = new Account()
 
-        account.addDeposit(transaction)
-        account.addDeposit(transaction)
+        account.addTransaction(transaction)
+        account.addTransaction(transaction)
 
         expect(account.getRecord()).toEqual([
             {
@@ -36,6 +44,32 @@ describe('Account', () => {
                 amount: 1000.00,
                 type: "credit",
                 balance: 2000
+            }])
+
+    })
+
+    it('updates the account record with a withdawal', () => {
+
+        Transaction.mockImplementation(() => {
+            return {
+                getTransaction: () => {
+                    return {type: 'debit', amount: 500.00, date: '01/01/2023'}
+                }
+            }
+        })
+        
+        const transaction = new Transaction()
+
+        const account = new Account()
+
+        account.addTransaction(transaction)
+
+        expect(account.getRecord()).toEqual([
+            {
+                date: '01/01/2023',
+                amount: 500.00,
+                type: "debit",
+                balance: -500
             }])
 
     })

@@ -1,9 +1,13 @@
 class Transaction {
+
     constructor(type, amount, date) {
         this.type = type
         this.amount = amount
         this.date = date
     }
+
+    // generic errors
+
     getTransaction() {
 
         if (!this.date) throw new Error('date must be provided')
