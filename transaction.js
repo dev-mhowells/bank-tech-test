@@ -10,11 +10,14 @@ class Transaction {
 
     getTransaction() {
 
-        if (!this.date) throw new Error('date must be provided')
+        if (!this.date) throw new Error('transaction must be initialized with: type, amount, date')
 
-        if (!this.amount) throw new Error('amount must be provided')
+        if (!this.amount) throw new Error('transaction must be initialized with: type, amount, date')
 
-        return {amount: this.amount, date: this.date.getDate(), type: this.type}
+        if(this.type === 'credit' || this.type === 'debit') {
+            return {amount: this.amount, date: this.date.getDate(), type: this.type}
+        } else throw new Error('type must be either "credit" or "debit"')
+
     }
 }
 

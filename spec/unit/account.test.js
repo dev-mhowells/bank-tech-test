@@ -5,16 +5,6 @@ jest.mock('../../transaction')
 
 describe('Account', () => {
 
-    // beforeAll(() => {
-    //     Transaction.mockImplementation(() => {
-    //         return {
-    //             getTransaction: () => {
-    //                 return {type: 'credit', amount: 1000.00, date: '01/01/2023'}
-    //             }
-    //         }
-    //     })
-    // })
-
     it('updates the account record with a deposit', () => {
 
         Transaction.mockImplementation(() => {
@@ -63,6 +53,7 @@ describe('Account', () => {
         const account = new Account()
 
         account.addTransaction(transaction)
+        account.addTransaction(transaction)
 
         expect(account.getRecord()).toEqual([
             {
@@ -70,6 +61,12 @@ describe('Account', () => {
                 amount: 500.00,
                 type: "debit",
                 balance: -500
+            },
+            {
+                date: '01/01/2023',
+                amount: 500.00,
+                type: "debit",
+                balance: -1000
             }])
 
     })
