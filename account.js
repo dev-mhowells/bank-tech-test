@@ -5,8 +5,6 @@ class Account {
         this.record = []
     }
 
-    // add transaction - find type and ammend total accordingly
-
     addTransaction(transaction) {
 
         const {amount, date, type} = transaction.getTransaction()
