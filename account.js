@@ -11,17 +11,20 @@ class Account {
 
         const incomingTransaction = transaction.getTransaction()
 
-        if(incomingTransaction.type === 'credit') {
-        this.balance += incomingTransaction.amount} 
-        else if (incomingTransaction.type === 'debit') {
-            this.balance -= incomingTransaction.amount
+        const type = incomingTransaction.type
+        const amount = incomingTransaction.amount
+
+        if(type === 'credit') {
+        this.balance += amount} 
+        else if (type === 'debit') {
+            this.balance -= amount
         }
 
         this.record = [...this.record, 
             {
                 date: incomingTransaction.date,
-                amount: incomingTransaction.amount,
-                type: incomingTransaction.type,
+                amount,
+                type,
                 balance: this.balance,
             }]
     }
