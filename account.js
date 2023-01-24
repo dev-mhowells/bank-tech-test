@@ -1,8 +1,10 @@
 class Account {
+
     constructor() {
         this.balance = 0
         this.record = []
     }
+
     addDeposit(deposit) {
 
         const incomingDeposit = deposit.getDeposit()
@@ -17,9 +19,11 @@ class Account {
                 balance: this.balance,
             }]
     }
+
     getRecord() {
         return this.record
     }
+    
 }
 
 module.exports = Account

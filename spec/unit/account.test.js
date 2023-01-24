@@ -22,6 +22,7 @@ describe('Account', () => {
         const account = new Account()
 
         account.addDeposit(deposit)
+        account.addDeposit(deposit)
 
         expect(account.getRecord()).toEqual([
             {
@@ -29,6 +30,12 @@ describe('Account', () => {
                 amount: 1000,
                 type: "credit",
                 balance: 1000
+            },
+            {
+                date: '01/01/2023',
+                amount: 1000,
+                type: "credit",
+                balance: 2000
             }])
 
     })
